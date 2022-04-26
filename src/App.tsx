@@ -1,7 +1,11 @@
-import { greet } from "./utils/greet";
-
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <>
+      <h1>Pastebin App</h1>
+      <input />
+      <button>Submit</button>
+    </>
+  );
 }
 
 export default App;
