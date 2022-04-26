@@ -1,34 +1,38 @@
 import { useState } from "react";
 
-  // interface Properties {
-  //  title?: string;
-  //  paste_text: string;
-  // }
-
 function App(): JSX.Element {
-  const [title, setTitle] = useState<string>("");
-  const [paste_text, setPaste_text] = useState<string>("");
-  console.log(title);
-  console.log(paste_text);
+  const [state, setState] = useState({title: "", paste_text: ""});
+  
+  const handleChange = (event: { target: { name: string; value: string; }; }) => {
+    const {name, value} = event.target;
+    setState(prevState => ({
+      ...prevState, 
+      [name]: value
+    }));
+  }
+
+  const handleClick = () => {
+    console.log(state);
+  }
 
   return (
     <>
       <h1>Pastebin App</h1>
       <input 
-        value = {title} 
+        value = {state.title}
         placeholder="Title (optional)" 
-        onChange={event => {
-            setTitle(event.target.value)
-            }} 
+        onChange={handleChange} 
+        name = "title"
       />
       <input 
-        value = {paste_text} 
+        value = {state.paste_text} 
         placeholder="Input text" 
-        onChange={event => {
-            setPaste_text(event.target.value)
-            }} 
+        onChange={handleChange} 
+        name = "paste_text"
       />
-      <button>Submit</button>
+      <button
+        onClick = {handleClick}
+      >Submit</button>
     </>
   );
 }
