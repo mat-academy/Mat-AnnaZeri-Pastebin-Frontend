@@ -2,12 +2,12 @@ import { useState } from "react";
 
 interface Pastes {
   title: string;
-  paste_text: string;
+  summary: string;
 }
 
 function App(): JSX.Element {
   const [state, setState] = useState({ title: "", paste_text: "" });
-  const [pastes, setPastes] = useState<Pastes[]>();
+  const [pastes, setPastes] = useState<Pastes[]>([]);
 
   const handleChange = (event: { target: { name: string; value: string } }) => {
     const { name, value } = event.target;
@@ -45,7 +45,16 @@ function App(): JSX.Element {
         name="paste_text"
       />
       <button onClick={handleClick}>Submit</button>
-      <div onChange={handleGetPastes}>These are the last 10 pastes</div>
+      <button onClick={handleGetPastes}>Get last 10 pastes</button>
+      <div>
+        {pastes.map ((paste, id) => {
+          return (
+            <div key = {id}>
+              {paste.title + ", " + paste.summary}
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
