@@ -47,12 +47,8 @@ function App(): JSX.Element {
       <button onClick={handleClick}>Submit</button>
       <button onClick={handleGetPastes}>Get last 10 pastes</button>
       <div>
-        {pastes.map ((paste, id) => {
-          return (
-            <div key = {id}>
-              {paste.title + ", " + paste.summary}
-            </div>
-          );
+        {pastes.map((paste, id) => {
+          return <div key={id}>{paste.title + ", " + paste.summary}</div>;
         })}
       </div>
     </>
