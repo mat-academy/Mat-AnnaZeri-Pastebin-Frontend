@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 interface Pastes {
   title: string;
   summary: string;
@@ -23,7 +24,7 @@ function App(): JSX.Element {
     //const body = {state};
     const requestOptions = {
       method: "POST",
-      headers: { "Contact-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(state),
     };
     console.log(JSON.stringify(state));
