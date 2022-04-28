@@ -53,13 +53,13 @@ function App(): JSX.Element {
   return (
     <>
       <h1>Pastebin App</h1>
-      <input
+      <textarea 
         value={state.title}
         placeholder="Title (optional)"
         onChange={handleChange}
         name="title"
       />
-      <input
+      <textarea
         value={state.paste_text}
         placeholder="Input text"
         onChange={handleChange}
