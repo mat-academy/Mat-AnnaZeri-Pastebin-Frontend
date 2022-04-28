@@ -2,6 +2,7 @@ import { useState } from "react";
 
 interface Pastes {
   title: string;
+  paste_text: string;
   summary: string;
 }
 
@@ -68,7 +69,12 @@ function App(): JSX.Element {
       <button onClick={handleGetPastes}>Get last 10 pastes</button>
       <div>
         {pastes.map((paste, id) => {
-          return <div key={id}>{paste.title + ", " + paste.summary}</div>;
+          return (
+            <details key={id}>
+              <summary>{paste.title + ", " + paste.summary}</summary>
+              {paste.paste_text}
+            </details>
+          );
         })}
       </div>
     </>
