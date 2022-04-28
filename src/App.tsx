@@ -69,10 +69,12 @@ function App(): JSX.Element {
       <button onClick={handleGetPastes}>Get last 10 pastes</button>
       <div>
         {pastes.map((paste, id) => {
-          return <details key={id}>
-            <summary>{paste.title + ", " + paste.summary}</summary>
-            {paste.paste_text}
-          </details>;
+          return (
+            <details key={id}>
+              <summary>{paste.title + ", " + paste.summary}</summary>
+              {paste.paste_text}
+            </details>
+          );
         })}
       </div>
     </>
