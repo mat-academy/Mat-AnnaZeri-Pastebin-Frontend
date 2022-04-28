@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 interface Pastes {
   title: string;
   summary: string;
@@ -28,7 +27,7 @@ function App(): JSX.Element {
       body: JSON.stringify(state),
     };
     console.log(JSON.stringify(state));
-    fetch (
+    fetch(
       "https://pastebin-app-mat-annazeri.herokuapp.com/pastes",
       requestOptions
     )
@@ -53,7 +52,7 @@ function App(): JSX.Element {
   return (
     <>
       <h1>Pastebin App</h1>
-      <textarea 
+      <textarea
         value={state.title}
         placeholder="Title (optional)"
         onChange={handleChange}
