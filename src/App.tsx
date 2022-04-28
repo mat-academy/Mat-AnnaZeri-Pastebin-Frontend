@@ -20,15 +20,22 @@ function App(): JSX.Element {
   const handleClick = () => {
     console.log(state);
     //
-    const body = {state};
+    const body = { state };
     const requestOptions = {
       method: "POST",
-      body: JSON.stringify(body)
-      }
-    fetch("https://pastebin-app-mat-annazeri.herokuapp.com/pastes", requestOptions)
+      body: JSON.stringify(body),
+    };
+    fetch(
+      "https://pastebin-app-mat-annazeri.herokuapp.com/pastes",
+      requestOptions
+    )
       .then((response) => response.json())
-      .then(result => {console.log('success', result)})
-      .catch(error => {console.log('error', error)})
+      .then((result) => {
+        console.log("success", result);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
     console.log(requestOptions);
   };
 
@@ -55,9 +62,7 @@ function App(): JSX.Element {
         onChange={handleChange}
         name="paste_text"
       />
-      <button
-        onClick={handleClick}
-      >Submit</button>
+      <button onClick={handleClick}>Submit</button>
       <button onClick={handleGetPastes}>Get last 10 pastes</button>
       <div>
         {pastes.map((paste, id) => {
