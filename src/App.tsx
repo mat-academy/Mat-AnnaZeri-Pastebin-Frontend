@@ -20,14 +20,16 @@ function App(): JSX.Element {
   const handleClick = () => {
     console.log(state);
     //
-    const body = {state};
+    //const body = {state};
     const requestOptions = {
       method: "POST",
-      headers: { "Contact-Type":"application/json" },
-      body: JSON.stringify(body),
+      headers: { "Contact-Type": "application/json" },
+      body: JSON.stringify(state),
     };
+    console.log(JSON.stringify(state));
     fetch(
-      "https://pastebin-app-mat-annazeri.herokuapp.com/pastes", requestOptions
+      "https://pastebin-app-mat-annazeri.herokuapp.com/pastes",
+      requestOptions
     )
       .then((response) => response.json())
       .then((result) => {
