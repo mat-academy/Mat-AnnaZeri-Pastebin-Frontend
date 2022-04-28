@@ -19,6 +19,24 @@ function App(): JSX.Element {
 
   const handleClick = () => {
     console.log(state);
+    //
+    const body = { state };
+    const requestOptions = {
+      method: "POST",
+      body: JSON.stringify(body),
+    };
+    fetch(
+      "https://pastebin-app-mat-annazeri.herokuapp.com/pastes",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("success", result);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+    console.log(requestOptions);
   };
 
   const handleGetPastes = () => {
