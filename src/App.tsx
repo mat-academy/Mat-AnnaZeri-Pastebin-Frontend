@@ -65,8 +65,12 @@ function App(): JSX.Element {
         onChange={handleChange}
         name="paste_text"
       />
+      <br></br>
       <button onClick={handleClick}>Submit</button>
       <button onClick={handleGetPastes}>Get last 10 pastes</button>
+      <br></br>
+      <hr></hr>
+      <br></br>
       <div>
         {pastes.map((paste, id) => {
           return (
