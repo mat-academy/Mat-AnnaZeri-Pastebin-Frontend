@@ -24,11 +24,11 @@ function App(): JSX.Element {
     //const body = {state};
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-type": "application/json" },
       body: JSON.stringify(state),
     };
     console.log(JSON.stringify(state));
-    fetch(
+    fetch (
       "https://pastebin-app-mat-annazeri.herokuapp.com/pastes",
       requestOptions
     )
