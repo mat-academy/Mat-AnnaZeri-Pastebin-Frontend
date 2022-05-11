@@ -1,14 +1,7 @@
 import { useState } from "react";
 
-// interface Pastes {
-//   title: string;
-//   paste_text: string;
-//   summary: string;
-// }
-
 function App(): JSX.Element {
   const [state, setState] = useState({ title: "", paste_text: "" });
-  // const [pastes, setPastes] = useState<Pastes[]>([]);
 
   const handleChange = (event: { target: { name: string; value: string } }) => {
     const { name, value } = event.target;
@@ -41,12 +34,6 @@ function App(): JSX.Element {
         });
     }
   };
-
-  // const handleGetPastes = () => {
-  //   fetch("https://pastebin-app-mat-annazeri.herokuapp.com/")
-  //     .then((response) => response.json())
-  //     .then((jsonBody) => setPastes(jsonBody));
-  // };
 
   return (
     <div>
