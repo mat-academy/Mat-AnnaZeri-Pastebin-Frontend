@@ -1,0 +1,29 @@
+
+.Container{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid rgb(7, 7, 37);
+    border-radius: 5px;
+    color: rgb(7, 7, 37);
+    padding: 20px;
+    background-color:rgb(233, 245, 245);
+    display: inline-flex;
+    
+
+       
+}
+
+.title{
+    font-family: "Gill sans", sans-serif;
+    font-style: oblique;
+    font-size: xxx-large;
+    color: rgb(23, 23, 112);
+    margin-left: 5px;
+    
+}
+.blue{
+    color: rgb(37, 64, 112);
+    font-size: medium;
+    background-color: white;
+    
+}
